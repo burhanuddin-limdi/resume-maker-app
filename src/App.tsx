@@ -1,24 +1,17 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import { ResumeForm } from "./components/resumeForm/resumeForm";
+import { ResumeSide } from "./components/resumeSide/resumeSide";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App grid grid-cols-2 h-screen">
+      <div className="col-span-1 h-screen">
+        <ResumeForm />
+      </div>
+      <div className="col-span-1 h-screen">
+        <ResumeSide />
+      </div>
     </div>
   );
 }
