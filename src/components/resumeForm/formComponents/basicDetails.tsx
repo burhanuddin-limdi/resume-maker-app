@@ -1,13 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
 
 export const BasicDetails: React.FC = () => {
+  let [removeHide, setremoveHide] = useState(false);
+  var hideClass: string = "";
   return (
     <div className="bg-white mx-10 rounded-md py-2 px-3">
       <div className="flex justify-between">
         <p className="font-semibold">Basic details</p>
-        <img src="./assets/Remove.svg" alt="" />
+        <img
+          src="./assets/Remove.svg"
+          alt=""
+          className={removeHide === true ? 'hidden':'visible'}
+          onClick={() => {
+            setremoveHide(removeHide=!removeHide);
+          }}
+        />
+        <img
+          src="./assets/Add_round.svg"
+          alt=""
+          className={removeHide === false ? 'hidden':'visible'}
+          onClick={() => {
+            setremoveHide(removeHide=!removeHide);
+          }}
+        />
       </div>
-      <form className="space-y-3 pt-3 pb-6">
+      <form className={"space-y-3 pt-3 pb-6 " + ((removeHide === true) ? 'hidden':'visible')}>
         <div className="flex flex-wrap space-x-3 justify-center">
           <input
             type="text"
