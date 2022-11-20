@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-
 export const ContactDetails: React.FC = () => {
   let [removeHide, setremoveHide] = useState(true);
+  
   return (
     <div className="bg-white mx-10 rounded-md py-2 px-3">
       <div className="flex justify-between">
@@ -34,6 +34,24 @@ export const ContactDetails: React.FC = () => {
             name=""
             id=""
             className="border border-[#a7a7a7] rounded-md text-xs placeholder:text-xs placeholder:text-[#a7a7a7] py-1 px-3"
+            placeholder="Email"
+          />
+
+          <input
+            type="text"
+            name=""
+            id=""
+            className="border border-[#a7a7a7] rounded-md text-xs placeholder:text-xs placeholder:text-[#a7a7a7] py-1 px-3"
+            placeholder="Phone Number"
+          />
+        </div>
+        <p className="text-sm text-left relative left-6 top-2">Address</p>
+        <div className="flex flex-wrap space-x-3 justify-center">
+          <input
+            type="text"
+            name=""
+            id=""
+            className="border border-[#a7a7a7] rounded-md text-xs placeholder:text-xs placeholder:text-[#a7a7a7] py-1 px-3"
             placeholder="Country"
           />
           <input
@@ -58,23 +76,6 @@ export const ContactDetails: React.FC = () => {
             id=""
             className="border border-[#a7a7a7] rounded-md text-xs placeholder:text-xs placeholder:text-[#a7a7a7] py-1 px-3"
             placeholder="Postal Code"
-          />
-        </div>
-        <div className="flex flex-wrap space-x-3 justify-center">
-          <input
-            type="text"
-            name=""
-            id=""
-            className="border border-[#a7a7a7] rounded-md text-xs placeholder:text-xs placeholder:text-[#a7a7a7] py-1 px-3"
-            placeholder="Email"
-          />
-
-          <input
-            type="text"
-            name=""
-            id=""
-            className="border border-[#a7a7a7] rounded-md text-xs placeholder:text-xs placeholder:text-[#a7a7a7] py-1 px-3"
-            placeholder="Phone Number"
           />
         </div>
       </form>

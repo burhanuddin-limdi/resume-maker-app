@@ -5,6 +5,7 @@ import { EducationDetails } from "./formComponents/educationDetails/educationDet
 import { Experience } from "./formComponents/experience";
 import { Projects } from "./formComponents/projects";
 import { Skills } from "./formComponents/skills";
+import { SocialMedia } from "./formComponents/socialLinks";
 
 export const ResumeForm: React.FC = () => {
   return (
@@ -15,7 +16,8 @@ export const ResumeForm: React.FC = () => {
         <EducationDetails />
         <Skills />
         <Experience />
-        <Projects/>
+        <Projects />
+        <SocialMedia />
       </div>
     </div>
   );
