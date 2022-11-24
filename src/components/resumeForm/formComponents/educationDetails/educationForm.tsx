@@ -1,8 +1,10 @@
 import React from 'react'
 
-export const EducationForm = () => {
+export const EducationForm = (props: { i: any; }) => {
+  
   return (
     <>
+    <p>i value {props.i}</p>
     <div className="flex flex-wrap space-x-3 justify-center">
       <div>
         <label htmlFor="" className="text-[10px] block text-left ml-1">

@@ -1,6 +1,6 @@
 import React from "react";
-import { BasicDetails } from "./formComponents/basicDetails";
-import { ContactDetails } from "./formComponents/contactDetails";
+import { BasicDetails } from "./formComponents/basicDetails/basicDetails";
+import { ContactDetails } from "./formComponents/contactDetails/contactDetails";
 import { EducationDetails } from "./formComponents/educationDetails/educationDetails";
 import { Experience } from "./formComponents/experience";
 import { Projects } from "./formComponents/projects";

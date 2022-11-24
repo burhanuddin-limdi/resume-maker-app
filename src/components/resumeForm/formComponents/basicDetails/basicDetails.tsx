@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { AppDispatch } from "../../../shared/store"; 
-import { setName } from "../../../shared/resumeSlice";
+import { AppDispatch } from "../../../../shared/store"; 
+import { setFirstName } from "./basicDetailsSlice";
+import { setLastName } from "./basicDetailsSlice";
+import { setJobTitle } from "./basicDetailsSlice";
 
 export const BasicDetails: React.FC = () => {
-  let [removeHide, setremoveHide] = useState(false);
-  // var hideClass: string = "";
-  const dispatch = useDispatch<AppDispatch>();
 
-  const [name, setNameValue] = useState('');
- const finalName = name || '';
+  let [removeHide, setremoveHide] = useState(false);
+
+  const dispatch = useDispatch<AppDispatch>();
 
   return (
     <div className="bg-white mx-10 rounded-md py-2 px-3">
@@ -42,7 +42,7 @@ export const BasicDetails: React.FC = () => {
             placeholder="First Name"
             onChange = {(e)=> {
               // setNameValue(e.target.value);
-              dispatch(setName(e.target.value));
+              dispatch(setFirstName(e.target.value));
             }}
           />
           <input
@@ -51,6 +51,9 @@ export const BasicDetails: React.FC = () => {
             id=""
             className="border border-[#a7a7a7] rounded-md text-xs placeholder:text-xs placeholder:text-[#a7a7a7] py-1 px-3"
             placeholder="Last Name"
+            onChange = {(e)=> {
+              dispatch(setLastName(e.target.value));
+            }}
           />
         </div>
         <div className="flex flex-wrap space-x-3 justify-center">
@@ -63,7 +66,10 @@ export const BasicDetails: React.FC = () => {
               name=""
               id=""
               className="border border-[#a7a7a7] rounded-md text-xs placeholder:text-xs placeholder:text-[#a7a7a7] py-1 px-3"
-              placeholder="First Name"
+              placeholder="Ex., Graphic designer"
+              onChange = {(e)=> {
+                dispatch(setJobTitle(e.target.value));
+              }}
             />
           </div>
           <div>

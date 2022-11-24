@@ -3,10 +3,13 @@ import { EducationForm } from "./educationForm";
 
 export const EducationDetails: React.FC = () => {
   let [removeHide, setremoveHide] = useState(true);
+  // let i = 0;
+ let [i, setI] = useState(0)
   // var forms = [<EducationForm/>]
-  let [forms, setforms] = useState([<EducationForm />]);
+  let [forms, setforms] = useState([<EducationForm  i={i}/>]);
   const addForm = () => {
-    setforms((forms = [...forms, <EducationForm />]));
+    setI(i=i++);
+    setforms((forms = [...forms, <EducationForm i={i}/>]));
   };
   return (
     <div className="bg-white mx-10 rounded-md py-2 px-3">

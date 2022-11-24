@@ -1,19 +1,21 @@
 import React from "react";
 import "./resumeSide.css";
 import { useAppSelector } from "../../shared/hooks";
-import { selectName } from "../../shared/resumeSlice";
+import { selectBasicDetails } from "../resumeForm/formComponents/basicDetails/basicDetailsSlice";
+// import { selectEmail } from "../resumeForm/formComponents/contactDetails/contactDetailsSlice";
+// import { selectPhone } from "../resumeForm/formComponents/contactDetails/contactDetailsSlice";
+import { selectContactDetails } from "../resumeForm/formComponents/contactDetails/contactDetailsSlice";
 export const ResumeSide: React.FC = () => {
-  const name = useAppSelector(selectName);
   return (
     <div className="bg-[#171616] w-full h-full grid items-center text-center justify-center pt-12 pb-6">
       <div className="grid grid-cols-3 items-center text-center a4-aspect h-[75vh]">
         <div className="col-span-2 bg-[#E8F9FD] h-full text-left">
           <div className="font-semibold text-lg  py-5 px-5">
-            <p>{name}</p>
-            <p>Limdi</p>
+            <p>{useAppSelector(selectBasicDetails).firstName}</p>
+            <p>{useAppSelector(selectBasicDetails).lastName}</p>
           </div>
           <p className="text-[11px] font-medium ml-5 relative bottom-6 h-fit">
-            Full Stack Web Developer
+            {useAppSelector(selectBasicDetails).jobTitle}
           </p>
           <div className="flex justify-center relative right-[10px]">
             <div className="w-10">
@@ -91,18 +93,26 @@ export const ResumeSide: React.FC = () => {
             <div className="text-left text-[7px] break-words w-[80%] space-y-2 pr-5">
               <div>
                 <p className="font-semibold">Email</p>
-                <p className="">burhanuddinlimdiwala5123@gmail.com</p>
+                <p className="">{useAppSelector(selectContactDetails).email}</p>
               </div>
               <div>
                 <p className="font-semibold">Address</p>
-                <p className="">Banswara, India</p>
-                <p className="">Bedwa</p>
-                <p className="">Partapur</p>
-                <p className="">327024</p>
+                <p className="">
+                  {useAppSelector(selectContactDetails).address.country}
+                </p>
+                <p className="">
+                  {useAppSelector(selectContactDetails).address.state}
+                </p>
+                <p className="">
+                  {useAppSelector(selectContactDetails).address.city}
+                </p>
+                <p className="">
+                  {useAppSelector(selectContactDetails).address.zip}
+                </p>
               </div>
               <div>
                 <p className="font-semibold">Phone Number</p>
-                <p>1234567890</p>
+                <p>{useAppSelector(selectContactDetails).phone}</p>
               </div>
             </div>
           </div>
@@ -115,14 +125,18 @@ export const ResumeSide: React.FC = () => {
 
             <div className="text-left text-[7px] break-words space-y-2 relative right-2">
               <div>
-                <p className="font-semibold">Bachelor in Computer Application (BCA)</p>
+                <p className="font-semibold">
+                  Bachelor in Computer Application (BCA)
+                </p>
                 <p className="">Leo College (GGTU)</p>
                 <p className="">9/10 CGPA</p>
                 <p className="">Banswara</p>
                 <p className="">2024</p>
               </div>
               <div>
-                <p className="font-semibold">Bachelor in Computer Application (BCA)</p>
+                <p className="font-semibold">
+                  Bachelor in Computer Application (BCA)
+                </p>
                 <p className="">Leo College (GGTU)</p>
                 <p className="">9/10 CGPA</p>
                 <p className="">Banswara</p>
@@ -138,9 +152,8 @@ export const ResumeSide: React.FC = () => {
             </div>
 
             <div className="text-left text-[7px] break-words relative right-6">
-                <p className="">LinkedIn</p>
-                <p className="">Github</p>
-               
+              <p className="">LinkedIn</p>
+              <p className="">Github</p>
             </div>
           </div>
         </div>
