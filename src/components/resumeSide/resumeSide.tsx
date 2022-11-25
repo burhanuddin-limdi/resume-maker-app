@@ -5,7 +5,10 @@ import { selectBasicDetails } from "../resumeForm/formComponents/basicDetails/ba
 // import { selectEmail } from "../resumeForm/formComponents/contactDetails/contactDetailsSlice";
 // import { selectPhone } from "../resumeForm/formComponents/contactDetails/contactDetailsSlice";
 import { selectContactDetails } from "../resumeForm/formComponents/contactDetails/contactDetailsSlice";
+import { selectEducationList } from "../resumeForm/formComponents/educationDetails/educationDetailsSlice";
 export const ResumeSide: React.FC = () => {
+  let educationList = [];
+
   return (
     <div className="bg-[#171616] w-full h-full grid items-center text-center justify-center pt-12 pb-6">
       <div className="grid grid-cols-3 items-center text-center a4-aspect h-[75vh]">
@@ -124,24 +127,7 @@ export const ResumeSide: React.FC = () => {
             </div>
 
             <div className="text-left text-[7px] break-words space-y-2 relative right-2">
-              <div>
-                <p className="font-semibold">
-                  Bachelor in Computer Application (BCA)
-                </p>
-                <p className="">Leo College (GGTU)</p>
-                <p className="">9/10 CGPA</p>
-                <p className="">Banswara</p>
-                <p className="">2024</p>
-              </div>
-              <div>
-                <p className="font-semibold">
-                  Bachelor in Computer Application (BCA)
-                </p>
-                <p className="">Leo College (GGTU)</p>
-                <p className="">9/10 CGPA</p>
-                <p className="">Banswara</p>
-                <p className="">2024</p>
-              </div>
+             
             </div>
           </div>
           <div className="flex justify-center mt-5 relative right-8">
