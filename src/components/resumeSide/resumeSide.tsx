@@ -6,6 +6,8 @@ import { selectContactDetails } from "../resumeForm/formComponents/contactDetail
 import { selectEducationList } from "../resumeForm/formComponents/educationDetails/educationDetailsSlice";
 import { selectSkill } from "../resumeForm/formComponents/skills/skillsSlice";
 import { selectSocialLinks } from "../resumeForm/formComponents/socailLinks/socailLinksSlice";
+import { selectExperience } from "../resumeForm/formComponents/experience/experienceSlice";
+import { selectProject } from "../resumeForm/formComponents/projects/projectsSlice";
 export const ResumeSide: React.FC = () => {
   return (
     <div className="bg-[#171616] w-full h-full grid items-center text-center justify-center pt-12 pb-6">
@@ -26,26 +28,20 @@ export const ResumeSide: React.FC = () => {
             </div>
 
             <div className="text-[8px] space-y-2">
-              <div className="relative right-3">
-                <p className="font-medium">Frontend Web Developer</p>
-                <p className="font-medium">Thinkgroupy Services Pvt. Ltd.</p>
-                <p className="text-[6px]">August 2022 - Nov 2022</p>
-                <ul className="text-[6px] w-[80%] list-disc pl-2">
-                  <li>Developed their complete frontend website by myself.</li>
-                  <li>Made changes in the desgins of website</li>
-                  <li>Integrated backend with frontend using REST APIs.</li>
-                </ul>
-              </div>
-              <div className="relative right-3">
-                <p className="font-medium">Frontend Web Developer</p>
-                <p className="font-medium">Thinkgroupy Services Pvt. Ltd.</p>
-                <p className="text-[6px]">August 2022 - Nov 2022</p>
-                <ul className="text-[6px] w-[80%] list-disc pl-2">
-                  <li>Developed their complete frontend website by myself.</li>
-                  <li>Made changes in the desgins of website</li>
-                  <li>Integrated backend with frontend using REST APIs.</li>
-                </ul>
-              </div>
+              {useAppSelector(selectExperience).map((e: any) => {
+                return (
+                  <div className="relative right-3" key={e}>
+                    <p className="font-medium">{e.post}</p>
+                    <p className="font-medium">{e.company}</p>
+                    <p className="text-[6px]">
+                      {e.startDate} - {e.endDate}
+                    </p>
+                    <div className="text-[6px] w-[80%] pl-2 break-words">
+                      <p>{e.summary}</p>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </div>
           <div className="flex justify-center mt-5">
@@ -56,42 +52,29 @@ export const ResumeSide: React.FC = () => {
             </div>
 
             <div className="text-[8px] space-y-2">
-              <div className="relative right-3">
-                <p className="font-medium">Limflix - Netflix clone</p>
+              {useAppSelector(selectProject).map((p) => {
+                return (
+                  <div className="relative right-3" key={p.name}>
+                    <p className="font-medium">{p.name}</p>
 
-                <p className="text-[6px] w-[80%]">
-                  I have made it using angular and TMBD API Live Demo:
-                  limflix.netlify.app Source:
-                </p>
-              </div>
-              <div className="relative right-3">
-                <p className="font-medium">Limflix - Netflix clone</p>
-
-                <p className="text-[6px] w-[80%]">
-                  I have made it using angular and TMBD API Live Demo:
-                  limflix.netlify.app Source:
-                </p>
-              </div>
-              <div className="relative right-3">
-                <p className="font-medium">Limflix - Netflix clone</p>
-
-                <p className="text-[6px] w-[80%]">
-                  I have made it using angular and TMBD API Live Demo:
-                  limflix.netlify.app Source:
-                </p>
-              </div>
+                    <p className="text-[6px] w-[80%]">
+                     {p.about}
+                    </p>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>
         <div className="col-span-1 bg-[#59CE8F] h-full">
           <div className="flex justify-center mt-5 relative right-[20px]">
-            <div className="w-10 sticky left-[4px] relative">
+            <div className="w-10  left-[4px] absolute">
               <p className="-rotate-90 text-[#E8F9FD] font-semibold text-[11px] relative top-4 left-0.5">
                 Contact
               </p>
             </div>
 
-            <div className="text-left text-[7px] break-words w-[80%] space-y-2 pr-5">
+            <div className="text-left text-[7px] break-words w-[80%] space-y-2 left-9 -top-1 absolute ">
               <div>
                 <p className="font-semibold">Email</p>
                 <p className="">{useAppSelector(selectContactDetails).email}</p>

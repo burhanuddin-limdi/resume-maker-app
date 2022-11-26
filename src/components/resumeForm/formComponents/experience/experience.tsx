@@ -1,22 +1,19 @@
 import React, { useState } from "react";
-
+import { useDispatch } from "react-redux";
+import { AppDispatch } from "../../../../shared/store";
+import { setExperience } from "./experienceSlice";
 export const Experience: React.FC = () => {
+  const dispatch = useDispatch<AppDispatch>();
+
   let [removeHide, setremoveHide] = useState(true);
-  const point =  <input
-  type="text"
-  name=""
-  id=""
-  className="border border-[#a7a7a7] rounded-md text-xs placeholder:text-xs placeholder:text-[#a7a7a7] py-1 px-3 w-full"
-  placeholder="Job description in points"
-/>
-  let [points, setpoints] = useState([point])
-  const addPoint = () =>{
+  const experience = {
+    post: "",
+    company: "",
+    startDate: "",
+    endDate: "",
+    summary: "",
+  };
 
-    setpoints(
-        points = [...points,point]
-    )
-
-  }
   return (
     <div className="bg-white mx-10 rounded-md py-2 px-3">
       <div className="flex justify-between">
@@ -50,6 +47,9 @@ export const Experience: React.FC = () => {
             id=""
             className="border border-[#a7a7a7] rounded-md text-xs placeholder:text-xs placeholder:text-[#a7a7a7] py-1 px-3"
             placeholder="Job Post"
+            onChange={e=>{
+              experience.post = e.target.value
+            }}
           />
           <input
             type="text"
@@ -57,6 +57,9 @@ export const Experience: React.FC = () => {
             id=""
             className="border border-[#a7a7a7] rounded-md text-xs placeholder:text-xs placeholder:text-[#a7a7a7] py-1 px-3"
             placeholder="Company Name"
+            onChange={e=>{
+              experience.company = e.target.value
+            }}
           />
         </div>
         <div className="flex flex-wrap space-x-3 justify-center">
@@ -66,6 +69,9 @@ export const Experience: React.FC = () => {
             id=""
             className="border border-[#a7a7a7] rounded-md text-xs placeholder:text-xs placeholder:text-[#a7a7a7] py-1 px-3"
             placeholder="Date started"
+            onChange={e=>{
+              experience.startDate = e.target.value
+            }}
           />
           <input
             type="text"
@@ -73,13 +79,31 @@ export const Experience: React.FC = () => {
             id=""
             className="border border-[#a7a7a7] rounded-md text-xs placeholder:text-xs placeholder:text-[#a7a7a7] py-1 px-3"
             placeholder="Date ended"
+            onChange={e=>{
+              experience.endDate = e.target.value
+            }}
+          />
+        </div>
+        <div className="flex justify-center">
+          <textarea
+            name=""
+            id=""
+            className="border border-[#a7a7a7] rounded-md text-xs placeholder:text-xs placeholder:text-[#a7a7a7] py-1 px-3"
+            placeholder="Summary of your work"
+            onChange={e=>{
+              experience.summary = e.target.value
+            }}
           />
         </div>
         <div className="flex flex-wrap justify-center space-y-3 px-6">
-         {/* {points} */}
-          <p onClick={()=>{
-            addPoint();
-          }}>add point</p>
+          {/* {points} */}
+          <p
+            onClick={() => {
+              dispatch(setExperience(experience));
+            }}
+          >
+            add
+          </p>
         </div>
       </form>
     </div>

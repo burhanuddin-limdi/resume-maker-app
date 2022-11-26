@@ -1,16 +1,20 @@
-import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
-import basicDetailsReducer from '../components/resumeForm/formComponents/basicDetails/basicDetailsSlice';
-import contactDetailsReducer from '../components/resumeForm/formComponents/contactDetails/contactDetailsSlice'
-import educationDetailsReducer from '../components/resumeForm/formComponents/educationDetails/educationDetailsSlice'
-import skillsReducer from '../components/resumeForm/formComponents/skills/skillsSlice'
-import  socialLinksReducer from '../components/resumeForm/formComponents/socailLinks/socailLinksSlice'
+import { configureStore, ThunkAction, Action } from "@reduxjs/toolkit";
+import basicDetailsReducer from "../components/resumeForm/formComponents/basicDetails/basicDetailsSlice";
+import contactDetailsReducer from "../components/resumeForm/formComponents/contactDetails/contactDetailsSlice";
+import educationDetailsReducer from "../components/resumeForm/formComponents/educationDetails/educationDetailsSlice";
+import skillsReducer from "../components/resumeForm/formComponents/skills/skillsSlice";
+import socialLinksReducer from "../components/resumeForm/formComponents/socailLinks/socailLinksSlice";
+import experienceReducer from "../components/resumeForm/formComponents/experience/experienceSlice";
+import projectReducer from "../components/resumeForm/formComponents/projects/projectsSlice";
 export const store = configureStore({
   reducer: {
     basicDetails: basicDetailsReducer,
     contactDetails: contactDetailsReducer,
-    educationDetails:educationDetailsReducer,
-    skills:skillsReducer,
-    socialLinks:socialLinksReducer
+    educationDetails: educationDetailsReducer,
+    skills: skillsReducer,
+    socialLinks: socialLinksReducer,
+    experiences: experienceReducer,
+    projects:projectReducer
   },
 });
 

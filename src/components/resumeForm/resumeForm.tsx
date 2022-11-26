@@ -2,8 +2,8 @@ import React from "react";
 import { BasicDetails } from "./formComponents/basicDetails/basicDetails";
 import { ContactDetails } from "./formComponents/contactDetails/contactDetails";
 import { EducationDetails } from "./formComponents/educationDetails/educationDetails";
-import { Experience } from "./formComponents/experience";
-import { Projects } from "./formComponents/projects";
+import { Experience } from "./formComponents/experience/experience";
+import { Projects } from "./formComponents/projects/projects";
 import { Skills } from "./formComponents/skills/skills";
 import { SocialMedia } from "./formComponents/socailLinks/socialLinks";
 
