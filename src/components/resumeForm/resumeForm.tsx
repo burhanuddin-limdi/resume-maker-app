@@ -4,8 +4,8 @@ import { ContactDetails } from "./formComponents/contactDetails/contactDetails";
 import { EducationDetails } from "./formComponents/educationDetails/educationDetails";
 import { Experience } from "./formComponents/experience";
 import { Projects } from "./formComponents/projects";
-import { Skills } from "./formComponents/skills";
-import { SocialMedia } from "./formComponents/socialLinks";
+import { Skills } from "./formComponents/skills/skills";
+import { SocialMedia } from "./formComponents/socailLinks/socialLinks";
 
 export const ResumeForm: React.FC = () => {
   return (

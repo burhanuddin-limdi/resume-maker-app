@@ -2,11 +2,15 @@ import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
 import basicDetailsReducer from '../components/resumeForm/formComponents/basicDetails/basicDetailsSlice';
 import contactDetailsReducer from '../components/resumeForm/formComponents/contactDetails/contactDetailsSlice'
 import educationDetailsReducer from '../components/resumeForm/formComponents/educationDetails/educationDetailsSlice'
+import skillsReducer from '../components/resumeForm/formComponents/skills/skillsSlice'
+import  socialLinksReducer from '../components/resumeForm/formComponents/socailLinks/socailLinksSlice'
 export const store = configureStore({
   reducer: {
     basicDetails: basicDetailsReducer,
     contactDetails: contactDetailsReducer,
-    educationDetails:educationDetailsReducer
+    educationDetails:educationDetailsReducer,
+    skills:skillsReducer,
+    socialLinks:socialLinksReducer
   },
 });
 

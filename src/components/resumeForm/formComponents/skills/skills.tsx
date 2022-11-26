@@ -1,19 +1,13 @@
 import React, { useState } from "react";
-
+import { useDispatch } from "react-redux";
+import { AppDispatch } from "../../../../shared/store";
+import { setSkill } from "./skillsSlice";
 export const Skills: React.FC = () => {
+  const dispatch = useDispatch<AppDispatch>()
   let [removeHide, setremoveHide] = useState(true);
-  const skillInput = (
-    <input
-      type="text"
-      name=""
-      id=""
-      className="border border-[#a7a7a7] rounded-md text-xs placeholder:text-xs placeholder:text-[#a7a7a7] py-1 px-3 w-full"
-      placeholder="Skill"
-    />
-  );
-  let [skill, setskill] = useState([skillInput]);
+  let [skill, setskill] = useState('');
   var addSkill = () => {
-    setskill((skill = [...skill, skillInput]));
+    dispatch(setSkill(skill));
   };
   return (
     <div className="bg-white mx-10 rounded-md py-2 px-3">
@@ -41,7 +35,16 @@ export const Skills: React.FC = () => {
           "space-y-3 pt-3 pb-6 " + (removeHide === true ? "hidden" : "visible")
         }
       >
-        {skill}
+        <input
+      type="text"
+      name=""
+      id=""
+      className="border border-[#a7a7a7] rounded-md text-xs placeholder:text-xs placeholder:text-[#a7a7a7] py-1 px-3 w-full"
+      placeholder="Skill"
+      onChange={(e)=>{
+     setskill(e.target.value)
+      }}
+    />
         <p
           onClick={() => {
             addSkill();

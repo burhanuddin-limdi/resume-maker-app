@@ -76,7 +76,7 @@ export const Experience: React.FC = () => {
           />
         </div>
         <div className="flex flex-wrap justify-center space-y-3 px-6">
-         {points}
+         {/* {points} */}
           <p onClick={()=>{
             addPoint();
           }}>add point</p>
