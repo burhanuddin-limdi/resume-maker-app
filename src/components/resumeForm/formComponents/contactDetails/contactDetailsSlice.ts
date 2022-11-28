@@ -3,12 +3,12 @@ import { RootState,  } from '../../../../shared/store';
 
 const initialState = {
     value: {
-        email:'',
-        phone:'',
+        email:'tahergari@gmail.com',
+        phone:'1234567890',
         address:{
-         country:'',
-         state:'',
-         city:'',
+         country:'India',
+         state:'Rajasthan',
+         city:'Banswa',
          zip:''
         },
        

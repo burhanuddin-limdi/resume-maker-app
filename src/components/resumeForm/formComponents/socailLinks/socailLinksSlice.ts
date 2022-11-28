@@ -3,7 +3,7 @@ import { RootState,  } from '../../../../shared/store';
 
 const initialState = {
     value: {
-       social:['']
+       social:['burhanuddinlimdiwala5123@gmail.com']
     }
 }
 

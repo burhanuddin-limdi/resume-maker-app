@@ -5,13 +5,6 @@ import { setSocialLink } from "./socailLinksSlice";
 export const SocialMedia: React.FC = () => {
   let [removeHide, setremoveHide] = useState(true);
   const dispatch = useDispatch<AppDispatch>();
-  //   const point =  <input
-  //   type="text"
-  //   name=""
-  //   id=""
-  //   className="border border-[#a7a7a7] rounded-md text-xs placeholder:text-xs placeholder:text-[#a7a7a7] py-1 px-3 w-full"
-  //   placeholder="Link to your Social Media page"
-  // />
   const [point, setpoint] = useState("");
   return (
     <div className="bg-white mx-10 rounded-md py-2 px-3">

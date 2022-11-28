@@ -3,9 +3,9 @@ import { RootState,  } from '../../../../shared/store';
 
 const initialState = {
     value: {
-        firstName:'',
-        lastName:'',
-        jobTitle:''
+        firstName:'Burhanuddin',
+        lastName:'Limdi',
+        jobTitle:'Full Stack Web Developer'
     }
 }
 

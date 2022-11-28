@@ -4,8 +4,11 @@ import { RootState,  } from '../../../../shared/store';
 const initialState = {
     value: {
        projects:[{
-        name:'',
-        about:''
+        name:'Limflix - Netflix Clone',
+        about:'I have made this website using angular framework and TMDB api. It is hosted at limflix.netlify.app'
+       },{
+        name:'Limflix - Netflix Clone',
+        about:'I have made this website using angular framework and TMDB api. It is hosted at limflix.netlify.app'
        }]
     }
 }

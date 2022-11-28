@@ -4,12 +4,18 @@ import { RootState,  } from '../../../../shared/store';
 const initialState = {
     value: {
        educationList:[{
-         degree:'',
-         college:'',
-         marks:'',
-         year:'',
-         location:''
-       } ] as any,
+        degree:'Bachelors in Computer Application',
+        college:'Leo College',
+        marks:'87%',
+        year:'2024',
+        location:'Banswara'
+      } ,{
+        degree:'Bachelors in Computer Application',
+        college:'Leo College',
+        marks:'87%',
+        year:'2024',
+        location:'Banswara'
+      } ] as any,
         },
        
     }

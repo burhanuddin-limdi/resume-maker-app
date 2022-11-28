@@ -1,22 +1,4 @@
-import React from "react";
-import "./resumeSide.css";
-import { useAppSelector } from "../../shared/hooks";
-import { selectBasicDetails } from "../resumeForm/formComponents/basicDetails/basicDetailsSlice";
-import { selectContactDetails } from "../resumeForm/formComponents/contactDetails/contactDetailsSlice";
-import { selectEducationList } from "../resumeForm/formComponents/educationDetails/educationDetailsSlice";
-import { selectSkill } from "../resumeForm/formComponents/skills/skillsSlice";
-import { selectSocialLinks } from "../resumeForm/formComponents/socailLinks/socailLinksSlice";
-import { selectExperience } from "../resumeForm/formComponents/experience/experienceSlice";
-import { selectProject } from "../resumeForm/formComponents/projects/projectsSlice";
-export const ResumeSide: React.FC = () => {
-
-  return (
-    
-    <div className="bg-[#171616] w-full h-full grid items-center text-center justify-center pt-12 pb-6">
-      {/* <PDFViewer>
-        <ResumeView></ResumeView>
-      </PDFViewer> */}
-      <div className="grid grid-cols-3 items-center text-center a4-aspect h-[75vh]" id="resume">
+<div className="grid grid-cols-3 items-center text-center a4-aspect h-[75vh]" id="resume">
     <div className="col-span-2 bg-[#E8F9FD] h-full text-left">
       <div className="font-semibold text-lg  py-5 px-5">
         <p>{useAppSelector(selectBasicDetails).firstName}</p>
@@ -145,24 +127,11 @@ export const ResumeSide: React.FC = () => {
           </p>
         </div>
 
-        <ul className="text-left text-[7px] break-words relative w-[85px]">
+        <ul className="text-left text-[7px] break-words relative">
           {useAppSelector(selectSocialLinks).map((social) => (
-            <li className="w-[85px]" key={social}>{social}</li>
+            <li key={social}>{social}</li>
           ))}
         </ul>
       </div>
     </div>
   </div>
-      <div className="flex justify-between items-center">
-        <div className="flex space-x-3">
-          <div className="aspect-square w-6 rounded-[100%] h-6 bg-[#000]"></div>
-          <div className="aspect-square w-6 rounded-[100%] h-6 bg-[#E8F9FD]"></div>
-          <div className="aspect-square w-6 rounded-[100%] h-6 bg-[#59CE8F]"></div>
-        </div>
-        <button className="rounded-md bg-[#FF1E00] w-fit text-white text-sm py-2 px-7 font-light">
-          Download PDF
-        </button>
-      </div>
-    </div>
-  );
-};

@@ -3,7 +3,7 @@ import { RootState,  } from '../../../../shared/store';
 
 const initialState = {
     value: {
-       skills:['']
+       skills:['Html','Html','Html','Html','Graphic Designing']
     }
 }
 
