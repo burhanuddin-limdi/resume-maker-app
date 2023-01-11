@@ -1,24 +1,12 @@
-import React from 'react'
-import { Page, Text, View, Document, StyleSheet } from '@react-pdf/renderer';
-const styles = StyleSheet.create({
-    page:{
-        display:'flex',
-        height:'75vh',
-        textAlign:'center',
-        alignItems:'center',
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { PDFViewer } from '@react-pdf/renderer';
+import { MyDocument } from './resumeDocument';
 
-        
-    }
-})
-export const ResumeView = () => {
-  return (
-    <Document>
-      <Page size="A4" style={styles.page}>
+const App = () => (
+  <PDFViewer>
+    <MyDocument />
+  </PDFViewer>
+);
 
-        <View></View>
-        <View></View>
-
-      </Page>
-    </Document>
-  )
-}
+ReactDOM.render(<App />, document.getElementById('root'));

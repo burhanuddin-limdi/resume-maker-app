@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { AppDispatch } from "../../../../shared/store";
-import { setEmail , setPhone, setCountry,setState,setCity,setZip } from "./contactDetailsSlice";
+import { setEmail, setPhone, setNationality } from "./contactDetailsSlice";
 
 export const ContactDetails: React.FC = () => {
   let [removeHide, setremoveHide] = useState(true);
-   
+
   const dispatch = useDispatch<AppDispatch>();
- 
+
   return (
     <div className="bg-white mx-10 rounded-md py-2 px-3">
       <div className="flex justify-between">
@@ -57,7 +57,7 @@ export const ContactDetails: React.FC = () => {
             }}
           />
         </div>
-        <p className="text-sm text-left relative left-6 top-2">Address</p>
+        <p className="text-sm text-left relative left-6 top-2">Nationality</p>
         <div className="flex flex-wrap space-x-3 justify-center">
           <input
             type="text"
@@ -66,10 +66,10 @@ export const ContactDetails: React.FC = () => {
             className="border border-[#a7a7a7] rounded-md text-xs placeholder:text-xs placeholder:text-[#a7a7a7] py-1 px-3"
             placeholder="Country"
             onChange={(e) => {
-              dispatch(setCountry(e.target.value))
+              dispatch(setNationality(e.target.value));
             }}
           />
-          <input
+          {/* <input
             type="text"
             name=""
             id=""
@@ -78,9 +78,9 @@ export const ContactDetails: React.FC = () => {
             onChange={(e) => {
               dispatch(setState(e.target.value))
             }}
-          />
+          /> */}
         </div>
-        <div className="flex flex-wrap space-x-3 justify-center">
+        {/* <div className="flex flex-wrap space-x-3 justify-center">
           <input
             type="text"
             name=""
@@ -101,7 +101,7 @@ export const ContactDetails: React.FC = () => {
               dispatch(setZip(e.target.value))
             }}
           />
-        </div>
+        </div> */}
       </form>
     </div>
   );
