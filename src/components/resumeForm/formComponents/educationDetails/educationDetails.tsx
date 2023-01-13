@@ -12,19 +12,24 @@ export const EducationDetails: React.FC = () => {
   // var forms = [<EducationForm/>]
   // let [forms, setforms] = useState([<EducationForm i={i} />]);
   var education = {
-    degree:'',
-    university:'',
-    college:'',
-    marks:'',
-    year:'',
-    location:''
-  }
-  const addForm = () => {
-    // setI((i = i++));
-    // setforms((forms = [...forms, <EducationForm i={i} />]));
-    dispatch(setEducation(education))
-
+    degree: "",
+    university: "",
+    college: "",
+    marks: "",
+    year: "",
+    location: "",
   };
+  const resetEducation = () => {
+    education = {
+      degree: "",
+      university: "",
+      college: "",
+      marks: "",
+      year: "",
+      location: "",
+    };
+  };
+
   return (
     <div className="bg-white mx-10 rounded-md py-2 px-3">
       <div className="flex justify-between">
@@ -62,7 +67,7 @@ export const EducationDetails: React.FC = () => {
               id=""
               className="border border-[#a7a7a7] rounded-md text-xs placeholder:text-xs placeholder:text-[#a7a7a7] py-1 px-3"
               placeholder="Ex., Bachelors in Arts, Senior Secondary"
-              onChange={(e)=>{
+              onChange={(e) => {
                 education.degree = e.target.value;
               }}
             />
@@ -77,7 +82,7 @@ export const EducationDetails: React.FC = () => {
               id=""
               className="border border-[#a7a7a7] rounded-md text-xs placeholder:text-xs placeholder:text-[#a7a7a7] py-1 px-3"
               placeholder="Ex., Delhi University, CBSE"
-              onChange={(e)=>{
+              onChange={(e) => {
                 education.university = e.target.value;
               }}
             />
@@ -90,7 +95,7 @@ export const EducationDetails: React.FC = () => {
             id=""
             className="border border-[#a7a7a7] rounded-md text-xs placeholder:text-xs placeholder:text-[#a7a7a7] py-1 px-3"
             placeholder="College Name"
-            onChange={(e)=>{
+            onChange={(e) => {
               education.college = e.target.value;
             }}
           />
@@ -101,7 +106,7 @@ export const EducationDetails: React.FC = () => {
             id=""
             className="border border-[#a7a7a7] rounded-md text-xs placeholder:text-xs placeholder:text-[#a7a7a7] py-1 px-3"
             placeholder="Marks/Percentage/CGPA"
-            onChange={(e)=>{
+            onChange={(e) => {
               education.marks = e.target.value;
             }}
           />
@@ -113,7 +118,7 @@ export const EducationDetails: React.FC = () => {
             id=""
             className="border border-[#a7a7a7] rounded-md text-xs placeholder:text-xs placeholder:text-[#a7a7a7] py-1 px-3"
             placeholder="Year"
-            onChange={(e)=>{
+            onChange={(e) => {
               education.year = e.target.value;
             }}
           />
@@ -124,7 +129,7 @@ export const EducationDetails: React.FC = () => {
             id=""
             className="border border-[#a7a7a7] rounded-md text-xs placeholder:text-xs placeholder:text-[#a7a7a7] py-1 px-3"
             placeholder="Location"
-            onChange={(e)=>{
+            onChange={(e) => {
               education.location = e.target.value;
             }}
           />
@@ -132,7 +137,9 @@ export const EducationDetails: React.FC = () => {
 
         <p
           onClick={() => {
-            addForm();
+            dispatch(setEducation(education));
+
+            resetEducation();
           }}
         >
           add

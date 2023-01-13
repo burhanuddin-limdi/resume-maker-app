@@ -9,6 +9,8 @@ import { selectSocialLinks } from "../resumeForm/formComponents/socailLinks/soca
 import { selectExperience } from "../resumeForm/formComponents/experience/experienceSlice";
 import { selectProject } from "../resumeForm/formComponents/projects/projectsSlice";
 import { store } from "../../shared/store";
+import { ColorPIckers } from "./colorPickers/colorPIckers";
+import { selectColors } from "./colorPickers/colorPIckerSlice";
 const fetchData = async () => {
   fetch("http://localhost:5253/api")
     .then((response) => {
@@ -72,7 +74,10 @@ export const ResumeSide: React.FC = () => {
         className="grid grid-cols-3 items-center text-center a4-aspect h-[75vh]"
         id="resume"
       >
-        <div className="col-span-2 bg-[#E8F9FD] h-full text-left">
+        <div
+          className="col-span-2 bg-[#E8F9FD] h-full text-left"
+          style={{ backgroundColor: useAppSelector(selectColors).primColor }}
+        >
           <div className="font-semibold text-lg  py-5 px-5">
             <p>{useAppSelector(selectBasicDetails).firstName}</p>
             <p>{useAppSelector(selectBasicDetails).lastName}</p>
@@ -80,7 +85,7 @@ export const ResumeSide: React.FC = () => {
           <p className="text-[11px] font-medium ml-5 relative bottom-6 h-fit">
             {useAppSelector(selectBasicDetails).jobTitle}
           </p>
-          <div className="flex justify-center relative">
+          <div className="flex relative">
             <div className="w-10">
               <p className="-rotate-90 text-[#000000] font-semibold text-[11px] relative top-10 right-[8px]">
                 Experience
@@ -89,18 +94,20 @@ export const ResumeSide: React.FC = () => {
 
             <div className="text-[8px] space-y-2">
               {useAppSelector(selectExperience).map((e: any) => {
-                return (
-                  <div className="relative right-3" key={e}>
-                    <p className="font-medium">{e.post}</p>
-                    <p className="font-medium">{e.company}</p>
-                    <p className="text-[6px]">
-                      {e.startDate} - {e.endDate}
-                    </p>
-                    <div className="text-[6px] w-[80%] pl-2 break-words">
-                      <p>{e.summary}</p>
+                if (e.post.length) {
+                  return (
+                    <div className="relative right-3" key={e}>
+                      <p className="font-medium">{e.post}</p>
+                      <p className="font-medium">{e.company}</p>
+                      <p className="text-[6px]">
+                        {e.startDate} - {e.endDate}
+                      </p>
+                      <div className="text-[6px] w-[80%] pl-2 break-words">
+                        <p>{e.summary}</p>
+                      </div>
                     </div>
-                  </div>
-                );
+                  );
+                }
               })}
             </div>
           </div>
@@ -113,18 +120,23 @@ export const ResumeSide: React.FC = () => {
 
             <div className="text-[8px] space-y-2">
               {useAppSelector(selectProject).map((p) => {
-                return (
-                  <div className="relative right-3" key={p.name}>
-                    <p className="font-medium">{p.name}</p>
+                if (p.name.length) {
+                  return (
+                    <div className="relative right-3" key={p.name}>
+                      <p className="font-medium">{p.name}</p>
 
-                    <p className="text-[6px] w-[80%]">{p.about}</p>
-                  </div>
-                );
+                      <p className="text-[6px] w-[80%]">{p.about}</p>
+                    </div>
+                  );
+                }
               })}
             </div>
           </div>
         </div>
-        <div className="col-span-1 bg-[#59CE8F] h-full">
+        <div
+          className="col-span-1 h-full"
+          style={{ backgroundColor: useAppSelector(selectColors).secColor }}
+        >
           <div className="flex justify-center mt-5 relative right-[20px] w-[99%]">
             <div className="w-10 relative top-5 left-4">
               <p className="-rotate-90 text-[#000000] font-semibold text-[11px] relative">
@@ -171,17 +183,19 @@ export const ResumeSide: React.FC = () => {
             </div>
             <div className="text-left text-[7px] break-words space-y-2 relative bottom-2 right-[18px]">
               {useAppSelector(selectEducationList).map((edu: any) => {
-                return (
-                  <div key={edu}>
-                    <p className="font-semibold">{edu.degree}</p>
-                    <p className="">
-                      {edu.college} {edu.university}
-                    </p>
-                    <p className="">{edu.marks}</p>
-                    <p className="">{edu.location}</p>
-                    <p className="">{edu.year}</p>
-                  </div>
-                );
+                if (edu.degree.length) {
+                  return (
+                    <div key={edu}>
+                      <p className="font-semibold">{edu.degree}</p>
+                      <p className="">
+                        {edu.college} {edu.university}
+                      </p>
+                      <p className="">{edu.marks}</p>
+                      <p className="">{edu.location}</p>
+                      <p className="">{edu.year}</p>
+                    </div>
+                  );
+                }
               })}
             </div>
           </div>
@@ -218,11 +232,7 @@ export const ResumeSide: React.FC = () => {
         </div>
       </div>
       <div className="flex justify-between items-center">
-        <div className="flex space-x-3">
-          <div className="aspect-square w-6 rounded-[100%] h-6 bg-[#000]"></div>
-          <div className="aspect-square w-6 rounded-[100%] h-6 bg-[#E8F9FD]"></div>
-          <div className="aspect-square w-6 rounded-[100%] h-6 bg-[#59CE8F]"></div>
-        </div>
+        <ColorPIckers />
         <button
           className="rounded-md bg-[#FF1E00] w-fit text-white text-sm py-2 px-7 font-light"
           id="dld-pdf"

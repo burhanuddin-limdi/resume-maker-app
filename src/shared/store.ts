@@ -6,6 +6,7 @@ import skillsReducer from "../components/resumeForm/formComponents/skills/skills
 import socialLinksReducer from "../components/resumeForm/formComponents/socailLinks/socailLinksSlice";
 import experienceReducer from "../components/resumeForm/formComponents/experience/experienceSlice";
 import projectReducer from "../components/resumeForm/formComponents/projects/projectsSlice";
+import colorsReducer from "../components/resumeSide/colorPickers/colorPIckerSlice";
 export const store = configureStore({
   reducer: {
     basicDetails: basicDetailsReducer,
@@ -14,7 +15,8 @@ export const store = configureStore({
     skills: skillsReducer,
     socialLinks: socialLinksReducer,
     experiences: experienceReducer,
-    projects:projectReducer
+    projects: projectReducer,
+    colors: colorsReducer,
   },
 });
 

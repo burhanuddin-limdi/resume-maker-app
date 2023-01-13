@@ -3,12 +3,10 @@ import { useDispatch } from "react-redux";
 import { AppDispatch } from "../../../../shared/store";
 import { setSkill } from "./skillsSlice";
 export const Skills: React.FC = () => {
-  const dispatch = useDispatch<AppDispatch>()
+  const dispatch = useDispatch<AppDispatch>();
   let [removeHide, setremoveHide] = useState(true);
-  let [skill, setskill] = useState('');
-  var addSkill = () => {
-    dispatch(setSkill(skill));
-  };
+  let [skill, setskill] = useState("");
+
   return (
     <div className="bg-white mx-10 rounded-md py-2 px-3">
       <div className="flex justify-between">
@@ -36,18 +34,18 @@ export const Skills: React.FC = () => {
         }
       >
         <input
-      type="text"
-      name=""
-      id=""
-      className="border border-[#a7a7a7] rounded-md text-xs placeholder:text-xs placeholder:text-[#a7a7a7] py-1 px-3 w-full"
-      placeholder="Skill"
-      onChange={(e)=>{
-     setskill(e.target.value)
-      }}
-    />
+          type="text"
+          name=""
+          id=""
+          className="border border-[#a7a7a7] rounded-md text-xs placeholder:text-xs placeholder:text-[#a7a7a7] py-1 px-3 w-full"
+          placeholder="Skill"
+          onChange={(e) => {
+            setskill(e.target.value);
+          }}
+        />
         <p
           onClick={() => {
-            addSkill();
+            dispatch(setSkill(skill));
           }}
         >
           Add skill
