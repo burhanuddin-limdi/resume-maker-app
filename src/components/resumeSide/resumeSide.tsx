@@ -34,13 +34,16 @@ const fetchData = async () => {
 
 const sendData = async () => {
   try {
-    const response = await fetch("http://localhost:5253/api", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(store.getState()),
-    })
+    const response = await fetch(
+      "https://resume-maker-backend-burhanuddin.onrender.com/api",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(store.getState()),
+      }
+    )
       .then((response) => {
         if (response.ok) {
           return response.arrayBuffer();
