@@ -72,6 +72,8 @@ export const ResumeSide: React.FC = () => {
                       </div>
                     </div>
                   );
+                } else {
+                  return <></>;
                 }
               })}
             </div>
@@ -93,6 +95,8 @@ export const ResumeSide: React.FC = () => {
                       <p className="text-[6px] w-[80%]">{p.about}</p>
                     </div>
                   );
+                } else {
+                  return <></>;
                 }
               })}
             </div>
@@ -169,6 +173,8 @@ export const ResumeSide: React.FC = () => {
                       <p className="">{edu.year}</p>
                     </div>
                   );
+                } else {
+                  return <></>;
                 }
               })}
             </div>
