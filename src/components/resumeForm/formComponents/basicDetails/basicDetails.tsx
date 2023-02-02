@@ -1,12 +1,11 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { AppDispatch } from "../../../../shared/store"; 
+import { AppDispatch } from "../../../../shared/store";
 import { setFirstName } from "./basicDetailsSlice";
 import { setLastName } from "./basicDetailsSlice";
 import { setJobTitle } from "./basicDetailsSlice";
 
 export const BasicDetails: React.FC = () => {
-
   let [removeHide, setremoveHide] = useState(false);
 
   const dispatch = useDispatch<AppDispatch>();
@@ -18,30 +17,34 @@ export const BasicDetails: React.FC = () => {
         <img
           src="./assets/Remove.svg"
           alt=""
-          className={removeHide === true ? 'hidden':'visible'}
+          className={removeHide === true ? "hidden" : "visible"}
           onClick={() => {
-            setremoveHide(removeHide=!removeHide);
+            setremoveHide((removeHide = !removeHide));
           }}
         />
         <img
           src="./assets/Add_round.svg"
           alt=""
-          className={removeHide === false ? 'hidden':'visible'}
+          className={removeHide === false ? "hidden" : "visible"}
           onClick={() => {
-            setremoveHide(removeHide=!removeHide);
+            setremoveHide((removeHide = !removeHide));
           }}
         />
       </div>
-      <form className={"space-y-3 pt-3 pb-6 " + ((removeHide === true) ? 'hidden':'visible')}>
-        <div className="flex flex-wrap space-x-3 justify-center">
+      <form
+        className={
+          "lg:space-y-3 pt-3 pb-6 " +
+          (removeHide === true ? "hidden" : "visible")
+        }
+      >
+        <div className="flex flex-wrap lg:flex-nowrap justify-evenly">
           <input
             type="text"
             name=""
             id=""
-            className="border border-[#a7a7a7] rounded-md text-xs placeholder:text-xs placeholder:text-[#a7a7a7] py-1 px-3"
+            className="border border-[#a7a7a7] rounded-md text-xs placeholder:text-xs placeholder:text-[#a7a7a7] py-1 px-3  my-2 w-full mx-2"
             placeholder="First Name"
-            onChange = {(e)=> {
-              // setNameValue(e.target.value);
+            onChange={(e) => {
               dispatch(setFirstName(e.target.value));
             }}
           />
@@ -49,15 +52,15 @@ export const BasicDetails: React.FC = () => {
             type="text"
             name=""
             id=""
-            className="border border-[#a7a7a7] rounded-md text-xs placeholder:text-xs placeholder:text-[#a7a7a7] py-1 px-3"
+            className="border border-[#a7a7a7] rounded-md text-xs placeholder:text-xs placeholder:text-[#a7a7a7] py-1 px-3  my-2 w-full mx-2"
             placeholder="Last Name"
-            onChange = {(e)=> {
+            onChange={(e) => {
               dispatch(setLastName(e.target.value));
             }}
           />
         </div>
-        <div className="flex flex-wrap space-x-3 justify-center">
-          <div>
+        <div className="flex flex-wrap lg:flex-nowrap justify-evenly">
+          <div className="w-full mx-2">
             <label htmlFor="" className="text-[10px] block text-left ml-1">
               Desired Job Title
             </label>
@@ -65,14 +68,14 @@ export const BasicDetails: React.FC = () => {
               type="text"
               name=""
               id=""
-              className="border border-[#a7a7a7] rounded-md text-xs placeholder:text-xs placeholder:text-[#a7a7a7] py-1 px-3"
+              className="border border-[#a7a7a7] rounded-md text-xs placeholder:text-xs placeholder:text-[#a7a7a7] py-1 px-3  my-2 w-full"
               placeholder="Ex., Graphic designer"
-              onChange = {(e)=> {
+              onChange={(e) => {
                 dispatch(setJobTitle(e.target.value));
               }}
             />
           </div>
-          <div>
+          <div className="w-full mx-2">
             <label htmlFor="" className="text-[10px] block text-left ml-1">
               (Optional)
             </label>
@@ -80,7 +83,7 @@ export const BasicDetails: React.FC = () => {
               type="text"
               name=""
               id=""
-              className="border border-[#a7a7a7] rounded-md text-xs placeholder:text-xs placeholder:text-[#a7a7a7] py-1 px-3"
+              className="border border-[#a7a7a7] rounded-md text-xs placeholder:text-xs placeholder:text-[#a7a7a7] py-1 px-3  my-2 w-full"
               placeholder="First Name"
             />
           </div>
@@ -89,4 +92,3 @@ export const BasicDetails: React.FC = () => {
     </div>
   );
 };
-

@@ -7,6 +7,7 @@ import socialLinksReducer from "../components/resumeForm/formComponents/socailLi
 import experienceReducer from "../components/resumeForm/formComponents/experience/experienceSlice";
 import projectReducer from "../components/resumeForm/formComponents/projects/projectsSlice";
 import colorsReducer from "../components/resumeSide/colorPickers/colorPIckerSlice";
+import previewReducer from "../components/resumeForm/preview/previewSlice";
 export const store = configureStore({
   reducer: {
     basicDetails: basicDetailsReducer,
@@ -17,6 +18,7 @@ export const store = configureStore({
     experiences: experienceReducer,
     projects: projectReducer,
     colors: colorsReducer,
+    preview: previewReducer,
   },
 });
 

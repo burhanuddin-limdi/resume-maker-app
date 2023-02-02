@@ -5,8 +5,7 @@ export const DownloadBtn = () => {
   const sendData = async () => {
     try {
       const response = await fetch(
-        // "https://resume-maker-backend-burhanuddin.onrender.com/api",
-        "http://localhost:5253/api",
+        "https://resume-maker-backend-burhanuddin.onrender.com/api",
         {
           method: "POST",
           headers: {

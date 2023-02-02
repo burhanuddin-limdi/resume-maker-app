@@ -34,7 +34,7 @@ import { DownloadBtn } from "./downloadBtn";
 
 export const ResumeSide: React.FC = () => {
   return (
-    <div className="bg-[#171616] w-full h-full grid items-center text-center justify-center pt-12 pb-6">
+    <div className="bg-[#171616] w-full h-screen grid items-center text-center justify-center pt-12 pb-6">
       <div
         className="grid grid-cols-3 items-center text-center a4-aspect h-[75vh]"
         id="resume"

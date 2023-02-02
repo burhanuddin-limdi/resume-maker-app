@@ -30,7 +30,8 @@ export const Skills: React.FC = () => {
       </div>
       <form
         className={
-          "space-y-3 pt-3 pb-6 " + (removeHide === true ? "hidden" : "visible")
+          "lg:space-y-3 pt-3 pb-6 " +
+          (removeHide === true ? "hidden" : "visible")
         }
       >
         <input

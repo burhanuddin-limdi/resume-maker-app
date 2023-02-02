@@ -15,7 +15,12 @@ export const ColorPIckers: React.FC = () => {
         className="aspect-square w-6 rounded-[100%] h-6"
         style={{ backgroundColor: useAppSelector(selectColors).primColor }}
         onClick={() => {
-          setShowPrimPicker((s) => !s);
+          if (showPrimPicker) {
+            setShowPrimPicker(false);
+            setShowSecPicker(false);
+          } else {
+            setShowPrimPicker(true);
+          }
         }}
       ></div>
 
@@ -25,7 +30,6 @@ export const ColorPIckers: React.FC = () => {
         }
         color={useAppSelector(selectColors).primColor}
         onChange={(color) => {
-          // setcolor(color.hex);
           dispatch(setPrimColor(color.hex));
         }}
       />
@@ -34,7 +38,12 @@ export const ColorPIckers: React.FC = () => {
         className="aspect-square w-6 rounded-[100%] h-6"
         style={{ backgroundColor: useAppSelector(selectColors).secColor }}
         onClick={() => {
-          setShowSecPicker((s) => !s);
+          if (showSecPicker) {
+            setShowPrimPicker(false);
+            setShowSecPicker(false);
+          } else {
+            setShowSecPicker(true);
+          }
         }}
       ></div>
       <ChromePicker
@@ -43,7 +52,6 @@ export const ColorPIckers: React.FC = () => {
         }
         color={useAppSelector(selectColors).secColor}
         onChange={(color) => {
-          // setcolor(color.hex);
           dispatch(setSecColor(color.hex));
         }}
       />

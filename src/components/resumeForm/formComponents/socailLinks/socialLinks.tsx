@@ -29,7 +29,8 @@ export const SocialMedia: React.FC = () => {
       </div>
       <form
         className={
-          "space-y-3 pt-3 pb-6 " + (removeHide === true ? "hidden" : "visible")
+          "lg:space-y-3 pt-3 pb-6 " +
+          (removeHide === true ? "hidden" : "visible")
         }
       >
         <div className="flex flex-wrap justify-center space-y-3 px-6">
@@ -39,11 +40,11 @@ export const SocialMedia: React.FC = () => {
             id=""
             className="border border-[#a7a7a7] rounded-md text-xs placeholder:text-xs placeholder:text-[#a7a7a7] py-1 px-3 w-full"
             placeholder="Link to your Social Media page"
-            onChange={e=> setpoint(e.target.value)}
+            onChange={(e) => setpoint(e.target.value)}
           />
           <p
             onClick={() => {
-              dispatch(setSocialLink(point))
+              dispatch(setSocialLink(point));
             }}
           >
             add another link

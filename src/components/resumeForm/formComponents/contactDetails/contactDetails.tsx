@@ -31,15 +31,16 @@ export const ContactDetails: React.FC = () => {
       </div>
       <form
         className={
-          "space-y-3 pt-3 pb-6 " + (removeHide === true ? "hidden" : "visible")
+          "lg:space-y-3 pt-3 pb-6 " +
+          (removeHide === true ? "hidden" : "visible")
         }
       >
-        <div className="flex flex-wrap space-x-3 justify-center">
+        <div className="flex flex-wrap lg:flex-nowrap justify-evenly">
           <input
             type="text"
             name=""
             id=""
-            className="border border-[#a7a7a7] rounded-md text-xs placeholder:text-xs placeholder:text-[#a7a7a7] py-1 px-3"
+            className="border border-[#a7a7a7] rounded-md text-xs placeholder:text-xs placeholder:text-[#a7a7a7] py-1 px-3  my-2 w-full mx-2"
             placeholder="Email"
             onChange={(e) => {
               dispatch(setEmail(e.target.value));
@@ -50,55 +51,23 @@ export const ContactDetails: React.FC = () => {
             type="text"
             name=""
             id=""
-            className="border border-[#a7a7a7] rounded-md text-xs placeholder:text-xs placeholder:text-[#a7a7a7] py-1 px-3"
+            className="border border-[#a7a7a7] rounded-md text-xs placeholder:text-xs placeholder:text-[#a7a7a7] py-1 px-3  my-2 w-full mx-2"
             placeholder="Phone Number"
             onChange={(e) => {
               dispatch(setPhone(e.target.value));
             }}
           />
         </div>
-        <p className="text-sm text-left relative left-6 top-2">Nationality</p>
-        <div className="flex flex-wrap space-x-3 justify-center">
+        {/* <div>
+          <p className="text-sm">Nationality</p>
           <input
             type="text"
             name=""
             id=""
-            className="border border-[#a7a7a7] rounded-md text-xs placeholder:text-xs placeholder:text-[#a7a7a7] py-1 px-3"
+            className="border border-[#a7a7a7] rounded-md text-xs placeholder:text-xs placeholder:text-[#a7a7a7] py-1 px-3  my-2 w-full mx-2"
             placeholder="Country"
             onChange={(e) => {
               dispatch(setNationality(e.target.value));
-            }}
-          />
-          {/* <input
-            type="text"
-            name=""
-            id=""
-            className="border border-[#a7a7a7] rounded-md text-xs placeholder:text-xs placeholder:text-[#a7a7a7] py-1 px-3"
-            placeholder="State"
-            onChange={(e) => {
-              dispatch(setState(e.target.value))
-            }}
-          /> */}
-        </div>
-        {/* <div className="flex flex-wrap space-x-3 justify-center">
-          <input
-            type="text"
-            name=""
-            id=""
-            className="border border-[#a7a7a7] rounded-md text-xs placeholder:text-xs placeholder:text-[#a7a7a7] py-1 px-3"
-            placeholder="City"
-            onChange={(e) => {
-              dispatch(setCity(e.target.value))
-            }}
-          />
-          <input
-            type="text"
-            name=""
-            id=""
-            className="border border-[#a7a7a7] rounded-md text-xs placeholder:text-xs placeholder:text-[#a7a7a7] py-1 px-3"
-            placeholder="Postal Code"
-            onChange={(e) => {
-              dispatch(setZip(e.target.value))
             }}
           />
         </div> */}

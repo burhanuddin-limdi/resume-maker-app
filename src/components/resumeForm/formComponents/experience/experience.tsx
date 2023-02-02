@@ -37,50 +37,51 @@ export const Experience: React.FC = () => {
       </div>
       <form
         className={
-          "space-y-3 pt-3 pb-6 " + (removeHide === true ? "hidden" : "visible")
+          "lg:space-y-3 pt-3 pb-6 " +
+          (removeHide === true ? "hidden" : "visible")
         }
       >
-        <div className="flex flex-wrap space-x-3 justify-center">
+        <div className="flex flex-wrap lg:flex-nowrap justify-evenly">
           <input
             type="text"
             name=""
             id=""
-            className="border border-[#a7a7a7] rounded-md text-xs placeholder:text-xs placeholder:text-[#a7a7a7] py-1 px-3"
+            className="border border-[#a7a7a7] rounded-md text-xs placeholder:text-xs placeholder:text-[#a7a7a7] py-1 px-3  my-2 w-full mx-2"
             placeholder="Job Post"
-            onChange={e=>{
-              experience.post = e.target.value
+            onChange={(e) => {
+              experience.post = e.target.value;
             }}
           />
           <input
             type="text"
             name=""
             id=""
-            className="border border-[#a7a7a7] rounded-md text-xs placeholder:text-xs placeholder:text-[#a7a7a7] py-1 px-3"
+            className="border border-[#a7a7a7] rounded-md text-xs placeholder:text-xs placeholder:text-[#a7a7a7] py-1 px-3  my-2 w-full mx-2"
             placeholder="Company Name"
-            onChange={e=>{
-              experience.company = e.target.value
+            onChange={(e) => {
+              experience.company = e.target.value;
             }}
           />
         </div>
-        <div className="flex flex-wrap space-x-3 justify-center">
+        <div className="flex flex-wrap lg:flex-nowrap justify-evenly">
           <input
             type="text"
             name=""
             id=""
-            className="border border-[#a7a7a7] rounded-md text-xs placeholder:text-xs placeholder:text-[#a7a7a7] py-1 px-3"
+            className="border border-[#a7a7a7] rounded-md text-xs placeholder:text-xs placeholder:text-[#a7a7a7] py-1 px-3  my-2 w-full mx-2"
             placeholder="Date started"
-            onChange={e=>{
-              experience.startDate = e.target.value
+            onChange={(e) => {
+              experience.startDate = e.target.value;
             }}
           />
           <input
             type="text"
             name=""
             id=""
-            className="border border-[#a7a7a7] rounded-md text-xs placeholder:text-xs placeholder:text-[#a7a7a7] py-1 px-3"
+            className="border border-[#a7a7a7] rounded-md text-xs placeholder:text-xs placeholder:text-[#a7a7a7] py-1 px-3  my-2 w-full mx-2"
             placeholder="Date ended"
-            onChange={e=>{
-              experience.endDate = e.target.value
+            onChange={(e) => {
+              experience.endDate = e.target.value;
             }}
           />
         </div>
@@ -88,10 +89,10 @@ export const Experience: React.FC = () => {
           <textarea
             name=""
             id=""
-            className="border border-[#a7a7a7] rounded-md text-xs placeholder:text-xs placeholder:text-[#a7a7a7] py-1 px-3"
+            className="border border-[#a7a7a7] rounded-md text-xs placeholder:text-xs placeholder:text-[#a7a7a7] py-1 px-3  my-2 w-full mx-2"
             placeholder="Summary of your work"
-            onChange={e=>{
-              experience.summary = e.target.value
+            onChange={(e) => {
+              experience.summary = e.target.value;
             }}
           />
         </div>

@@ -34,7 +34,8 @@ export const Projects: React.FC = () => {
       </div>
       <form
         className={
-          "space-y-3 pt-3 pb-6 " + (removeHide === true ? "hidden" : "visible")
+          "lg:space-y-3 pt-3 pb-6 " +
+          (removeHide === true ? "hidden" : "visible")
         }
       >
         <input
@@ -43,8 +44,8 @@ export const Projects: React.FC = () => {
           id=""
           className="border border-[#a7a7a7] rounded-md text-xs placeholder:text-xs placeholder:text-[#a7a7a7] py-1 px-3 w-full"
           placeholder="Country"
-          onChange={e=>{
-            project.name = e.target.value
+          onChange={(e) => {
+            project.name = e.target.value;
           }}
         />
         <textarea
@@ -52,8 +53,8 @@ export const Projects: React.FC = () => {
           id=""
           className="border border-[#a7a7a7] rounded-md text-xs placeholder:text-xs placeholder:text-[#a7a7a7] py-1 px-3 w-full"
           placeholder="State"
-          onChange={e=>{
-            project.about = e.target.value
+          onChange={(e) => {
+            project.about = e.target.value;
           }}
         />
         <p

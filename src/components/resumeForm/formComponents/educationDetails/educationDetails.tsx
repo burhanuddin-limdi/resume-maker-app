@@ -53,11 +53,12 @@ export const EducationDetails: React.FC = () => {
       </div>
       <form
         className={
-          "space-y-3 pt-3 pb-6 " + (removeHide === true ? "hidden" : "visible")
+          "lg:space-y-3 pt-3 pb-6 " +
+          (removeHide === true ? "hidden" : "visible")
         }
       >
-        <div className="flex flex-wrap space-x-3 justify-center">
-          <div>
+        <div className="flex flex-wrap lg:flex-nowrap justify-evenly">
+          <div className="w-full mx-2">
             <label htmlFor="" className="text-[10px] block text-left ml-1">
               Degree/course name
             </label>
@@ -65,14 +66,14 @@ export const EducationDetails: React.FC = () => {
               type="text"
               name=""
               id=""
-              className="border border-[#a7a7a7] rounded-md text-xs placeholder:text-xs placeholder:text-[#a7a7a7] py-1 px-3"
+              className="border border-[#a7a7a7] rounded-md text-xs placeholder:text-xs placeholder:text-[#a7a7a7] py-1 px-3  my-2 w-full"
               placeholder="Ex., Bachelors in Arts, Senior Secondary"
               onChange={(e) => {
                 education.degree = e.target.value;
               }}
             />
           </div>
-          <div>
+          <div className="w-full mx-2">
             <label htmlFor="" className="text-[10px] block text-left ml-1">
               University/Board
             </label>
@@ -80,7 +81,7 @@ export const EducationDetails: React.FC = () => {
               type="text"
               name=""
               id=""
-              className="border border-[#a7a7a7] rounded-md text-xs placeholder:text-xs placeholder:text-[#a7a7a7] py-1 px-3"
+              className="border border-[#a7a7a7] rounded-md text-xs placeholder:text-xs placeholder:text-[#a7a7a7] py-1 px-3  my-2 w-full"
               placeholder="Ex., Delhi University, CBSE"
               onChange={(e) => {
                 education.university = e.target.value;
@@ -88,12 +89,12 @@ export const EducationDetails: React.FC = () => {
             />
           </div>
         </div>
-        <div className="flex flex-wrap space-x-3 justify-center">
+        <div className="flex flex-wrap lg:flex-nowrap justify-evenly">
           <input
             type="text"
             name=""
             id=""
-            className="border border-[#a7a7a7] rounded-md text-xs placeholder:text-xs placeholder:text-[#a7a7a7] py-1 px-3"
+            className="border border-[#a7a7a7] rounded-md text-xs placeholder:text-xs placeholder:text-[#a7a7a7] py-1 px-3  my-2 w-full mx-2"
             placeholder="College Name"
             onChange={(e) => {
               education.college = e.target.value;
@@ -104,19 +105,19 @@ export const EducationDetails: React.FC = () => {
             type="text"
             name=""
             id=""
-            className="border border-[#a7a7a7] rounded-md text-xs placeholder:text-xs placeholder:text-[#a7a7a7] py-1 px-3"
+            className="border border-[#a7a7a7] rounded-md text-xs placeholder:text-xs placeholder:text-[#a7a7a7] py-1 px-3  my-2 w-full mx-2"
             placeholder="Marks/Percentage/CGPA"
             onChange={(e) => {
               education.marks = e.target.value;
             }}
           />
         </div>
-        <div className="flex flex-wrap space-x-3 justify-center">
+        <div className="flex flex-wrap lg:flex-nowrap justify-evenly">
           <input
             type="text"
             name=""
             id=""
-            className="border border-[#a7a7a7] rounded-md text-xs placeholder:text-xs placeholder:text-[#a7a7a7] py-1 px-3"
+            className="border border-[#a7a7a7] rounded-md text-xs placeholder:text-xs placeholder:text-[#a7a7a7] py-1 px-3  my-2 w-full mx-2"
             placeholder="Year"
             onChange={(e) => {
               education.year = e.target.value;
@@ -127,7 +128,7 @@ export const EducationDetails: React.FC = () => {
             type="text"
             name=""
             id=""
-            className="border border-[#a7a7a7] rounded-md text-xs placeholder:text-xs placeholder:text-[#a7a7a7] py-1 px-3"
+            className="border border-[#a7a7a7] rounded-md text-xs placeholder:text-xs placeholder:text-[#a7a7a7] py-1 px-3  my-2 w-full mx-2"
             placeholder="Location"
             onChange={(e) => {
               education.location = e.target.value;
