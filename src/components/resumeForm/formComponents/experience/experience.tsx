@@ -89,22 +89,23 @@ export const Experience: React.FC = () => {
           <textarea
             name=""
             id=""
-            className="border border-[#a7a7a7] rounded-md text-xs placeholder:text-xs placeholder:text-[#a7a7a7] py-1 px-3  my-2 w-full mx-2"
+            className="border border-[#a7a7a7] rounded-md text-xs placeholder:text-xs placeholder:text-[#a7a7a7] py-1 px-3  my-2 w-full mx-2 h-[75px]"
             placeholder="Summary of your work"
             onChange={(e) => {
               experience.summary = e.target.value;
             }}
           />
         </div>
-        <div className="flex flex-wrap justify-center space-y-3 px-6">
-          {/* {points} */}
-          <p
+        <div className="w-full flex justify-center">
+          <button
             onClick={() => {
               dispatch(setExperience(experience));
             }}
+            className="m-auto w-fit rounded-md bg-[#E8F9FD] px-3 py-1 text-sm flex justify-center place-items-center mt-2.5"
           >
-            add
-          </p>
+            <span className="text-lg mx-1 relative">+</span>
+            <span>Add Expereince</span>
+          </button>
         </div>
       </form>
     </div>

@@ -30,8 +30,7 @@ export const Skills: React.FC = () => {
       </div>
       <form
         className={
-          "lg:space-y-3 pt-3 pb-6 " +
-          (removeHide === true ? "hidden" : "visible")
+          "lg:space-y-3 py-3 " + (removeHide === true ? "hidden" : "visible")
         }
       >
         <input
@@ -44,13 +43,15 @@ export const Skills: React.FC = () => {
             setskill(e.target.value);
           }}
         />
-        <p
+        <button
           onClick={() => {
             dispatch(setSkill(skill));
           }}
+          className="m-auto w-fit rounded-md bg-[#E8F9FD] px-3 py-1 text-sm flex justify-center place-items-center mt-2.5"
         >
-          Add skill
-        </p>
+          <span className="text-lg mx-1 relative bottom-0.5">+</span>
+          <span>Add Skill</span>
+        </button>
       </form>
     </div>
   );

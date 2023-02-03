@@ -11,7 +11,6 @@ export const previewPdfSlice = createSlice({
   reducers: {
     showPdf: (state, action: PayloadAction<boolean>) => {
       state.pdfVisible = action.payload;
-      console.log(state.pdfVisible);
     },
   },
 });

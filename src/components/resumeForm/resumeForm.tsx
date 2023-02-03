@@ -12,7 +12,7 @@ import { PreviewBtn } from "./preview/previewBtn";
 export const ResumeForm: React.FC = () => {
   return (
     <div className="bg-[#E8F9FD] w-full h-screen grid items-center overflow-y-auto relative">
-      <div className="space-y-3 my-5">
+      <div className="space-y-3 mb-20">
         <BasicDetails />
         <ContactDetails />
         <EducationDetails />

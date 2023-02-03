@@ -135,16 +135,19 @@ export const EducationDetails: React.FC = () => {
             }}
           />
         </div>
+        <div className="w-full flex justify-center">
+          <button
+            onClick={() => {
+              dispatch(setEducation(education));
 
-        <p
-          onClick={() => {
-            dispatch(setEducation(education));
-
-            resetEducation();
-          }}
-        >
-          add
-        </p>
+              resetEducation();
+            }}
+            className="m-auto w-fit rounded-md bg-[#E8F9FD] px-3 py-1"
+          >
+            <span className="text-lg mx-1">+</span>
+            Add
+          </button>
+        </div>
       </form>
     </div>
   );

@@ -75,18 +75,7 @@ export const BasicDetails: React.FC = () => {
               }}
             />
           </div>
-          <div className="w-full mx-2">
-            <label htmlFor="" className="text-[10px] block text-left ml-1">
-              (Optional)
-            </label>
-            <input
-              type="text"
-              name=""
-              id=""
-              className="border border-[#a7a7a7] rounded-md text-xs placeholder:text-xs placeholder:text-[#a7a7a7] py-1 px-3  my-2 w-full"
-              placeholder="First Name"
-            />
-          </div>
+          <div className="w-full mx-2"></div>
         </div>
       </form>
     </div>

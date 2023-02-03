@@ -29,8 +29,7 @@ export const SocialMedia: React.FC = () => {
       </div>
       <form
         className={
-          "lg:space-y-3 pt-3 pb-6 " +
-          (removeHide === true ? "hidden" : "visible")
+          "lg:space-y-3 py-3 " + (removeHide === true ? "hidden" : "visible")
         }
       >
         <div className="flex flex-wrap justify-center space-y-3 px-6">
@@ -42,13 +41,17 @@ export const SocialMedia: React.FC = () => {
             placeholder="Link to your Social Media page"
             onChange={(e) => setpoint(e.target.value)}
           />
-          <p
-            onClick={() => {
-              dispatch(setSocialLink(point));
-            }}
-          >
-            add another link
-          </p>
+          <div className="w-full flex justify-center">
+            <button
+              onClick={() => {
+                dispatch(setSocialLink(point));
+              }}
+              className="m-auto w-fit rounded-md bg-[#E8F9FD] px-3 py-1"
+            >
+              <span className="text-lg mx-1 relative">+</span>
+              <span>Add Link</span>
+            </button>
+          </div>
         </div>
       </form>
     </div>

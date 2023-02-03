@@ -11,6 +11,9 @@ import { selectProject } from "../resumeForm/formComponents/projects/projectsSli
 import { ColorPIckers } from "./colorPickers/colorPIckers";
 import { selectColors } from "./colorPickers/colorPIckerSlice";
 import { DownloadBtn } from "./downloadBtn";
+import { useDispatch } from "react-redux";
+import { AppDispatch } from "../../shared/store";
+import { showPdf } from "../resumeForm/preview/previewSlice";
 // const fetchData = async () => {
 //   fetch("http://localhost:5253/api")
 //     .then((response) => {
@@ -33,10 +36,18 @@ import { DownloadBtn } from "./downloadBtn";
 // };
 
 export const ResumeSide: React.FC = () => {
+  const dispatch = useDispatch<AppDispatch>();
+
+  const closePdf = () => {
+    dispatch(showPdf(false));
+  };
   return (
-    <div className="bg-[#171616] w-full h-screen grid items-center text-center justify-center pt-12 pb-6">
+    <div className="bg-[#171616] w-full h-screen grid items-center text-center justify-center pt-12 pb-6 overflow-y-auto relative">
+      <button className="absolute top-3 left-3 z-20" onClick={closePdf}>
+        <img src="./assets/arrow.png" width={"20px"} alt="" />
+      </button>
       <div
-        className="grid grid-cols-3 items-center text-center a4-aspect h-[75vh]"
+        className="grid grid-cols-3 items-center text-center a4-aspect h-[60vh] lg:h-[75vh]"
         id="resume"
       >
         <div

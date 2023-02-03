@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import { AppDispatch } from "../../../shared/store";
 import { showPdf } from "./previewSlice";
 
-export const PreviewBtn = () => {
+export const PreviewBtn: React.FC = () => {
   const dispatch = useDispatch<AppDispatch>();
 
   const previewPdf = () => {

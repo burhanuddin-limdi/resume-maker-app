@@ -34,8 +34,7 @@ export const Projects: React.FC = () => {
       </div>
       <form
         className={
-          "lg:space-y-3 pt-3 pb-6 " +
-          (removeHide === true ? "hidden" : "visible")
+          "space-y-3 py-3 " + (removeHide === true ? "hidden" : "visible")
         }
       >
         <input
@@ -43,7 +42,7 @@ export const Projects: React.FC = () => {
           name=""
           id=""
           className="border border-[#a7a7a7] rounded-md text-xs placeholder:text-xs placeholder:text-[#a7a7a7] py-1 px-3 w-full"
-          placeholder="Country"
+          placeholder="Title"
           onChange={(e) => {
             project.name = e.target.value;
           }}
@@ -52,18 +51,22 @@ export const Projects: React.FC = () => {
           name=""
           id=""
           className="border border-[#a7a7a7] rounded-md text-xs placeholder:text-xs placeholder:text-[#a7a7a7] py-1 px-3 w-full"
-          placeholder="State"
+          placeholder="Description"
           onChange={(e) => {
             project.about = e.target.value;
           }}
         />
-        <p
-          onClick={() => {
-            dispatch(setProject(project));
-          }}
-        >
-          add
-        </p>
+        <div className="w-full flex justify-center">
+          <button
+            onClick={() => {
+              dispatch(setProject(project));
+            }}
+            className="m-auto w-fit rounded-md bg-[#E8F9FD] px-3 py-1"
+          >
+            <span className="text-lg mx-1 relative">+</span>
+            <span>Add Project</span>
+          </button>
+        </div>
       </form>
     </div>
   );
