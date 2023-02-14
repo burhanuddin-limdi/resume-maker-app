@@ -43,7 +43,7 @@ export const Skills: React.FC = () => {
             setskill(e.target.value);
           }}
         />
-        <button
+        <p
           onClick={() => {
             dispatch(setSkill(skill));
           }}
@@ -51,7 +51,7 @@ export const Skills: React.FC = () => {
         >
           <span className="text-lg mx-1 relative bottom-0.5">+</span>
           <span>Add Skill</span>
-        </button>
+        </p>
       </form>
     </div>
   );

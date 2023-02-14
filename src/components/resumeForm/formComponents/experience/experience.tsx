@@ -97,7 +97,7 @@ export const Experience: React.FC = () => {
           />
         </div>
         <div className="w-full flex justify-center">
-          <button
+          <p
             onClick={() => {
               dispatch(setExperience(experience));
             }}
@@ -105,7 +105,7 @@ export const Experience: React.FC = () => {
           >
             <span className="text-lg mx-1 relative">+</span>
             <span>Add Expereince</span>
-          </button>
+          </p>
         </div>
       </form>
     </div>

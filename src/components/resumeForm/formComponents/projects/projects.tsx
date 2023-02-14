@@ -57,7 +57,7 @@ export const Projects: React.FC = () => {
           }}
         />
         <div className="w-full flex justify-center">
-          <button
+          <p
             onClick={() => {
               dispatch(setProject(project));
             }}
@@ -65,7 +65,7 @@ export const Projects: React.FC = () => {
           >
             <span className="text-lg mx-1 relative">+</span>
             <span>Add Project</span>
-          </button>
+          </p>
         </div>
       </form>
     </div>

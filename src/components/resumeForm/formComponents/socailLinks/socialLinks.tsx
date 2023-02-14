@@ -42,7 +42,7 @@ export const SocialMedia: React.FC = () => {
             onChange={(e) => setpoint(e.target.value)}
           />
           <div className="w-full flex justify-center">
-            <button
+            <p
               onClick={() => {
                 dispatch(setSocialLink(point));
               }}
@@ -50,7 +50,7 @@ export const SocialMedia: React.FC = () => {
             >
               <span className="text-lg mx-1 relative">+</span>
               <span>Add Link</span>
-            </button>
+            </p>
           </div>
         </div>
       </form>

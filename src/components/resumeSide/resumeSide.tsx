@@ -43,7 +43,10 @@ export const ResumeSide: React.FC = () => {
   };
   return (
     <div className="bg-[#171616] w-full h-screen grid items-center text-center justify-center pt-12 pb-6 overflow-y-auto relative">
-      <button className="absolute top-3 left-3 z-20" onClick={closePdf}>
+      <button
+        className="absolute top-3 left-3 z-20 md:hidden"
+        onClick={closePdf}
+      >
         <img src="./assets/arrow.png" width={"20px"} alt="" />
       </button>
       <div
@@ -54,7 +57,7 @@ export const ResumeSide: React.FC = () => {
           className="col-span-2 bg-[#E8F9FD] h-full text-left"
           style={{ backgroundColor: useAppSelector(selectColors).primColor }}
         >
-          <div className="font-semibold text-lg  py-5 px-5">
+          <div className="font-medium text-lg  py-5 px-5">
             <p>{useAppSelector(selectBasicDetails).firstName}</p>
             <p>{useAppSelector(selectBasicDetails).lastName}</p>
           </div>
